@@ -10,6 +10,7 @@
   <tbody>
     <% @questionnaires.each do |questionnaire| %>
       <tr>
+	<td><%= questionnaire.name %></td>
         <td><%= link_to 'Show', questionnaire %></td>
         <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
         <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -20,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Questionnaire', new_questionnaire_path %>
+<%= link_to 'Create New Questionnaire', new_questionnaire_path %>

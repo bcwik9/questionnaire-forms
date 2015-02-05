@@ -69,6 +69,6 @@ class QuestionnairesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
-      params[:questionnaire]
+      params.require(:questionnaire).permit(:name)
     end
 end
