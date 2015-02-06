@@ -17,7 +17,6 @@ class QuestionnairesController < ApplicationController
   def new
     @questionnaire = Questionnaire.new
     @questionnaire.questions.build
-    #@questionnaire.build_questions
   end
 
   # GET /questionnaires/1/edit
