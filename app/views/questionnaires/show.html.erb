@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
-Name: <%= @questionnaire.name %>
+<h1><%= @questionnaire.name %></h1>
 <br>
+<h2>Questions:</h2>
+<ul id="question_list">
+  <% @questions.each do |question| %>
+  <li><%= question.content %>
+  <% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
 <%= link_to 'Back', questionnaires_path %>

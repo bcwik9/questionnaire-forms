@@ -10,11 +10,14 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   # GET /questionnaires/1.json
   def show
+    @questions = @questionnaire.questions
   end
 
   # GET /questionnaires/new
   def new
     @questionnaire = Questionnaire.new
+    @questionnaire.questions.build
+    #@questionnaire.build_questions
   end
 
   # GET /questionnaires/1/edit
@@ -69,6 +72,6 @@ class QuestionnairesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
-      params.require(:questionnaire).permit(:name)
+      params.require(:questionnaire).permit(:name, questions_attributes: [:content, :answer])
     end
 end

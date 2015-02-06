@@ -15,7 +15,18 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <br>
+  <% f.fields_for :questions do |builder| %>
+    <%= builder.label :content, "Question" %><br>
+    <%= builder.text_field :content %>
+    <%= builder.label :answer, "Answer" %><br>
+    <%= builder.text_field :answer %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+<!-- <% @question = Question.new %>
+<%= render "questions/form" %> -->
 <% end %>
