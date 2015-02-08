@@ -4,17 +4,18 @@
     <%= f.hidden_field :questionnaire_id, :value => params[:id] %>
     
     <div class="field">
-	<%= f.label :user %><br>
+	<%= f.label :user, "Enter your name:" %><br>
 	<%= f.text_field :user %>
     </div>
 
     <br>
     <% i = 0 %>
     <%= f.fields_for :answers do |builder| %>
-	<%= render 'answer_fields' %>
+	<%= render 'answer_fields', builder: builder, i: i %>
 	<% i += 1 %>
     <% end %>
 
+    <br>
     <div class="actions">
 	<%= f.submit %>
     </div>
