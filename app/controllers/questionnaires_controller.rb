@@ -68,9 +68,10 @@ class QuestionnairesController < ApplicationController
     def set_questionnaire
       @questionnaire = Questionnaire.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
       params.require(:questionnaire).permit(:name, questions_attributes: [:id, :content, :answer])
     end
 end
+  
