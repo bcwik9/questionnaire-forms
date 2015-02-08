@@ -21,6 +21,9 @@ class ResponsesController < ApplicationController
     # can probably change the following to some kind of count query
     @questionnaire = Questionnaire.find(params[:id])
     @questionnaire.questions.size.times { @response.answers.build }
+
+    @questionnaire_name = @questionnaire.name
+
     @questions = @questionnaire.questions
   end
 

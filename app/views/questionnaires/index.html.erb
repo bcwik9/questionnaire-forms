@@ -4,7 +4,7 @@
 <table id="questionnaires" class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Questionnaire Name</th>
       <th>Edit</th>
       <th>Remove</th>
     </tr>
@@ -15,8 +15,8 @@
       <tr>
         <td><%= link_to questionnaire.name, questionnaire %></td>
 	
-        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire), "data-no-turbolink" => true %></td>
-        <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', edit_questionnaire_path(questionnaire), class: "btn btn-primary fa fa-pencil", "data-no-turbolink" => true %></td>
+	<td><%= link_to '', questionnaire, class: "btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

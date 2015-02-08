@@ -4,7 +4,7 @@
 <table id="responses" class="table table-striped">
     <thead>
 	<tr>
-	    <th>Name</th>
+	    <th>Questionnaire Name</th>
 	    <th>User</th>
 	    <th>Remove</th>
 	</tr>
@@ -15,7 +15,7 @@
 	    <tr>
 		<td><%= link_to response.questionnaire.name, response %></td>
 		<td><%= response.user %></td>
-		<td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to '', response, class: "btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	    </tr>
 	<% end %>
     </tbody>
