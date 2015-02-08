@@ -44,7 +44,7 @@ class QuestionnairesController < ApplicationController
   def update
     respond_to do |format|
       if @questionnaire.update(questionnaire_params)
-        format.html { redirect_to @questionnaire, notice: 'Questionnaire was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Questionnaire was successfully updated.' }
         format.json { render :show, status: :ok, location: @questionnaire }
       else
         format.html { render :edit }

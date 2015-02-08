@@ -12,7 +12,7 @@
     <% @questionnaires.each do |questionnaire| %>
       <tr>
         <td><%= link_to questionnaire.name, questionnaire %></td>
-        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
+        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire), "data-no-turbolink" => true %></td>
         <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
