@@ -1,5 +1,5 @@
 <fieldset>
-    <%= f.label :content, question.content %><br>
-    <%= f.text_field :content %><br>
-    <%= f.hidden_field :question_id, :value => question.id%>
+    <%= builder.label :content, @questions[i].content  %><br>
+    <%= builder.text_field :content %><br>
+    <%= builder.hidden_field :question_id, :value => @questions[i].id %>
 </fieldset>

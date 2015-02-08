@@ -9,10 +9,10 @@
     </div>
 
     <br>
-    <% @questionnaire.questions.each_with_index do |question, i| %>
-	<%= f.fields_for @response.answers[i] do |builder| %>
-	    <%= render 'answer_fields', f: builder, question: question %>
-	<% end %>
+    <% i = 0 %>
+    <%= f.fields_for :answers do |builder| %>
+	<%= render 'answer_fields' %>
+	<% i += 1 %>
     <% end %>
 
     <div class="actions">

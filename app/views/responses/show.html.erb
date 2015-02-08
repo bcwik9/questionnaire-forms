@@ -3,8 +3,7 @@
 
 <ol>
     <% @answers.each do |answer| %>
-	<li>test</li>
-	<%= render 'answer' %>
+	<%= render 'answer', answer: answer %>
     <% end %>
 </ol>
 

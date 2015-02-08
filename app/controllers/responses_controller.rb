@@ -18,8 +18,10 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
+    # can probably change the following to some kind of count query
     @questionnaire = Questionnaire.find(params[:id])
     @questionnaire.questions.size.times { @response.answers.build }
+    @questions = @questionnaire.questions
   end
 
   # POST /responses
@@ -27,7 +29,7 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     raise 'Trying to create a response without a corresponding questionnaire!' if @response.questionnaire.nil?
-    
+
     respond_to do |format|
       if @response.save
         format.html { redirect_to root_path, notice: 'Response was successfully created.' }
@@ -57,7 +59,7 @@ class ResponsesController < ApplicationController
   
   # Never trust parameters from the scary internet, only allow the white list through.
   def response_params
-    params.require(:response).permit(:user, :questionnaire_id, answers_attributes: [:id, :content])
+    params.require(:response).permit(:user, :questionnaire_id, answers_attributes: [:id, :content, :question_id])
   end
 
 end
