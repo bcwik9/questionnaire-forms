@@ -17,6 +17,7 @@ gem 'therubyracer',  platforms: :ruby
 # stuff for bootstrap
 gem 'less'
 gem 'less-rails'
+gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use jquery as the JavaScript library
