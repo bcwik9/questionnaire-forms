@@ -1,0 +1,22 @@
+<%= form_for(@response) do |f| %>
+    <%= render 'layouts/check_error' %>
+
+    <div class="field">
+	<%= f.label :user %><br>
+	<%= f.text_field :user %>
+    </div>
+
+    <div class="field">
+	<%= f.hidden_field :questionnaire_id, :value => params[:id] %>
+    </div>
+
+    <br>
+    <%= f.fields_for :answers do |builder| %>
+	<%= render 'answer_fields', f: builder %>
+    <% end %>
+
+    <div class="actions">
+	<%= f.submit %>
+    </div>
+
+<% end %>

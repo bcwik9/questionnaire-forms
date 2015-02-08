@@ -1,0 +1,11 @@
+<h1>Questionnaire: <%= @questionnaire_name %>
+<h2>Completed by: <%= @user %></h2>
+
+<ol>
+    <% @answers.each do |answer| %>
+	<li>test</li>
+	<%= render 'answer' %>
+    <% end %>
+</ol>
+
+<%= link_to "Back", responses_path %>

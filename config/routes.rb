@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :responses
+
+  # there might be a better way to do this...
+  get '/questionnaires/new', to: 'questionnaires#new'
+  get '/questionnaires/:id', to: 'responses#new'
+
   resources :questionnaires
 
   # The priority is based upon order of creation: first created -> highest priority.

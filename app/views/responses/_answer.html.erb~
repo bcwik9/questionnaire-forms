@@ -1,0 +1,1 @@
+<li>Q: <%= f.label :question, :question.content %></li>
