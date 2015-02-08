@@ -4,3 +4,4 @@
 
 jQuery ->
         $('#responses').DataTable()
+        $('#user_response').DataTable()

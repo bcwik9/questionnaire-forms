@@ -1,10 +1,20 @@
-<h1>Questionnaire: <%= @questionnaire_name %>
+<h1>Questionnaire: <%= @questionnaire_name %></h1>
 <h2>Completed by: <%= @user %></h2>
 
-<ol>
-    <% @answers.each do |answer| %>
-	<%= render 'answer', answer: answer %>
-    <% end %>
-</ol>
+<table id="user_response" class="table table-striped">
+    <thead>
+	<tr>
+	    <th>Question</th>
+	    <th>Answer</th>
+	</tr>
+    </thead>
 
-<%= link_to "Back", responses_path %>
+    <tbody>
+
+	<% @answers.each do |answer| %>
+	    <%= render 'answer', answer: answer %>
+	<% end %>
+
+    </tbody>
+</table>
+<%= link_to "Back", responses_path, class: "btn btn-default" %>
