@@ -13,7 +13,7 @@
   <tbody>
     <% @questionnaires.each do |questionnaire| %>
       <tr>
-        <td><%= link_to questionnaire.name, questionnaire %></td>
+        <td><%= link_to questionnaire.name, questionnaire, class: "btn btn-default"  %></td>
 	
         <td><%= link_to '', edit_questionnaire_path(questionnaire), class: "btn btn-primary fa fa-pencil", "data-no-turbolink" => true %></td>
 	<td><%= link_to '', questionnaire, class: "btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,6 +24,6 @@
 
 <br>
 
-<%= link_to 'Create New Questionnaire', new_questionnaire_path, "data-no-turbolink" => true %>
-<br>
-<%= link_to 'View Responses', responses_path %>
+<%= link_to 'Create New Questionnaire', new_questionnaire_path, class: "btn btn-success", "data-no-turbolink" => true %>
+<br><br>
+<%= link_to 'View Responses', responses_path, class: "btn btn-primary" %>
