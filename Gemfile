@@ -32,6 +32,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # datatables
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
+# rspec
+gem 'minitest'
+gem 'rspec-rails'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
