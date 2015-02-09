@@ -1,4 +1,0 @@
-<fieldset>
-    <%= f.label :content, question.content %><br>
-    <%= f.text_field :content %><br>
-</fieldset>

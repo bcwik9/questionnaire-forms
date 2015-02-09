@@ -1,1 +1,0 @@
-<h1><%= link_to @response.questionnaire.name, @response.questionnaire %><h1>
