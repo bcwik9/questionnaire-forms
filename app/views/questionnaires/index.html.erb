@@ -13,8 +13,7 @@
   <tbody>
     <% @questionnaires.each do |questionnaire| %>
       <tr>
-        <td><%= link_to questionnaire.name, questionnaire, class: "btn btn-default"  %></td>
-	
+        <td class="tbl-btn"><%= link_to questionnaire.name, questionnaire, class: "btn btn-default tbl-btn"  %></td>
         <td><%= link_to '', edit_questionnaire_path(questionnaire), class: "btn btn-primary fa fa-pencil", "data-no-turbolink" => true %></td>
 	<td><%= link_to '', questionnaire, class: "btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
