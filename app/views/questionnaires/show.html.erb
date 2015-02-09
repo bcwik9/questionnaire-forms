@@ -1,9 +1,0 @@
-<h1>Filling out: <%= @questionnaire.name %></h1>
-<ol>
-    <% @questions.each do |question| %>
-	<li><%= question.content %>
-    <% end %>
-</ol>
-
-<%= link_to 'Edit', edit_questionnaire_path(@questionnaire), "data-no-turbolink" => true %> |
-<%= link_to 'Back', questionnaires_path %>

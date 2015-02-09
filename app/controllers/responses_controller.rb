@@ -18,12 +18,12 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @response = Response.new
+
     # can probably change the following to some kind of count query
     @questionnaire = Questionnaire.find(params[:id])
     @questionnaire.questions.size.times { @response.answers.build }
 
     @questionnaire_name = @questionnaire.name
-
     @questions = @questionnaire.questions
   end
 
@@ -31,7 +31,6 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
-    raise 'Trying to create a response without a corresponding questionnaire!' if @response.questionnaire.nil?
 
     respond_to do |format|
       if @response.save

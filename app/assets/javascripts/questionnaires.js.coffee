@@ -5,6 +5,7 @@
 
 # taken from https://github.com/railscasts/196-nested-model-form-revised
 # allows us to dynamically add questions to a questionnaire
+# when a user clicks a link
 jQuery ->
         $('form').on 'click', '.add_fields', (event) ->
                 time = new Date().getTime()

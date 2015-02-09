@@ -16,6 +16,8 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/new
   def new
     @questionnaire = Questionnaire.new
+    # initialize a single question, since a questionnaire should have at
+    # least one associated question
     @questionnaire.questions.build
   end
 
