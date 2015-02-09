@@ -31,6 +31,7 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
+    @response.user = "Anonymous" if @response.user.nil? or @response.user.empty?
 
     respond_to do |format|
       if @response.save
