@@ -1,9 +1,9 @@
 <%= form_for(@questionnaire) do |f| %>
     <%= render 'layouts/check_error' %>
 
-    <div class="field">
+    <div class="field input-group">
 	<%= f.label :name, "Questionnaire name:" %><br>
-	<%= f.text_field :name %>
+	<%= f.text_field :name, class: "form-control", type: "text", placeholder: "Name" %>
     </div>
 
     <%= f.fields_for :questions do |builder| %>

@@ -15,9 +15,9 @@
     <!-- Store questionnaire_id so we can associate the response with the questionnaire -->
     <%= f.hidden_field :questionnaire_id, :value => params[:id] %>
     
-    <div class="field">
+    <div class="field input-group">
 	<%= f.label :user, "Enter your name:" %><br>
-	<%= f.text_field :user %>
+	<%= f.text_field :user, class: "form-control", type: "text", placeholder: "Name" %>
     </div>
 
     <br>

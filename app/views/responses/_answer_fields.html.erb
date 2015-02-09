@@ -1,5 +1,7 @@
 <fieldset>
-    <%= builder.label :content, @questions[i].content  %><br>
-    <%= builder.text_field :content %><br>
-    <%= builder.hidden_field :question_id, :value => @questions[i].id %>
+    <div class="input-group">
+	<%= builder.label :content, @questions[i].content %><br>
+	<%= builder.text_field :content, class: "form-control", type: "text", placeholder: "Answer" %><br>
+	<%= builder.hidden_field :question_id, :value => @questions[i].id %>
+    </div>
 </fieldset>
