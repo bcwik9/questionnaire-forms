@@ -1,6 +1,16 @@
 <h1>Filling out: <%= @questionnaire_name %></h1>
 <%= form_for(@response) do |f| %>
-    <%= render 'layouts/check_error' %>
+    <% if @response.errors.any? %>
+	<div id="error_explanation">
+	    <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+	    
+	    <ul>
+		<% @response.errors.full_messages.each do |message| %>
+		    <li><%= message %></li>
+		<% end %>
+	    </ul>
+	</div>
+    <% end %>
 
     <!-- Store questionnaire_id so we can associate the response with the questionnaire -->
     <%= f.hidden_field :questionnaire_id, :value => params[:id] %>
