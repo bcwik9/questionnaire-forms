@@ -27,6 +27,12 @@ describe QuestionnairesController do
     { name: "Questionnaire name" }
   end
 
+  def invalid_attributes questionnaire=nil
+    h = {:questionnaire => {:blah => 'unused param' }}
+    h[:id] = questionnaire.to_param unless questionnaire.nil?
+    return h
+  end
+  
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # QuestionnairesController. Be sure to keep this updated too.
@@ -81,14 +87,14 @@ describe QuestionnairesController do
       it "assigns a newly created but unsaved questionnaire as @questionnaire" do
         # Trigger the behavior that occurs when invalid params are submitted
         Questionnaire.any_instance.stub(:save).and_return(false)
-        post :create, {:questionnaire => {}}, valid_session
+        post :create, invalid_attributes, valid_session
         assigns(:questionnaire).should be_a_new(Questionnaire)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Questionnaire.any_instance.stub(:save).and_return(false)
-        post :create, {:questionnaire => {}}, valid_session
+        post :create, invalid_attributes, valid_session
         response.should render_template("new")
       end
     end
@@ -124,7 +130,7 @@ describe QuestionnairesController do
         questionnaire = Questionnaire.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Questionnaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionnaire.to_param, :questionnaire => {}}, valid_session
+        put :update, invalid_attributes(questionnaire), valid_session
         assigns(:questionnaire).should eq(questionnaire)
       end
 
@@ -132,7 +138,7 @@ describe QuestionnairesController do
         questionnaire = Questionnaire.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Questionnaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionnaire.to_param, :questionnaire => {}}, valid_session
+        put :update, invalid_attributes(questionnaire), valid_session
         response.should render_template("edit")
       end
     end
