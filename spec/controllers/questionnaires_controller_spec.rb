@@ -28,7 +28,7 @@ describe QuestionnairesController do
   end
 
   def invalid_attributes questionnaire=nil
-    h = {:questionnaire => {:blah => 'unused param' }}
+    h = {:questionnaire => {:fake => 'unused param' }}
     h[:id] = questionnaire.to_param unless questionnaire.nil?
     return h
   end

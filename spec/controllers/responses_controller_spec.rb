@@ -23,12 +23,20 @@ describe ResponsesController do
   # This should return the minimal set of attributes required to create a valid
   # Response. As you add validations to Response, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) {
+    {:user => 'Anonymous'} 
+  }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ResponsesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  def invalid_attributes response=nil
+    h = {:response => {:fake => 'unused'} }
+    h[:id] = response.to_param unless response.nil?
+    return h
+  end
 
   describe "GET index" do
     it "assigns all responses as @responses" do
@@ -53,14 +61,6 @@ describe ResponsesController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested response as @response" do
-      response = Response.create! valid_attributes
-      get :edit, {:id => response.to_param}, valid_session
-      assigns(:response).should eq(response)
-    end
-  end
-
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Response" do
@@ -75,9 +75,9 @@ describe ResponsesController do
         assigns(:response).should be_persisted
       end
 
-      it "redirects to the created response" do
+      it "redirects to the root page" do
         post :create, {:response => valid_attributes}, valid_session
-        response.should redirect_to(Response.last)
+        response.should redirect_to(root_path)
       end
     end
 
@@ -85,59 +85,15 @@ describe ResponsesController do
       it "assigns a newly created but unsaved response as @response" do
         # Trigger the behavior that occurs when invalid params are submitted
         Response.any_instance.stub(:save).and_return(false)
-        post :create, {:response => {  }}, valid_session
+        post :create, invalid_attributes, valid_session
         assigns(:response).should be_a_new(Response)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Response.any_instance.stub(:save).and_return(false)
-        post :create, {:response => {  }}, valid_session
+        post :create, invalid_attributes, valid_session
         response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested response" do
-        response = Response.create! valid_attributes
-        # Assuming there are no other responses in the database, this
-        # specifies that the Response created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Response.any_instance.should_receive(:update).with({ "these" => "params" })
-        put :update, {:id => response.to_param, :response => { "these" => "params" }}, valid_session
-      end
-
-      it "assigns the requested response as @response" do
-        response = Response.create! valid_attributes
-        put :update, {:id => response.to_param, :response => valid_attributes}, valid_session
-        assigns(:response).should eq(response)
-      end
-
-      it "redirects to the response" do
-        response = Response.create! valid_attributes
-        put :update, {:id => response.to_param, :response => valid_attributes}, valid_session
-        response.should redirect_to(response)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the response as @response" do
-        response = Response.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Response.any_instance.stub(:save).and_return(false)
-        put :update, {:id => response.to_param, :response => {  }}, valid_session
-        assigns(:response).should eq(response)
-      end
-
-      it "re-renders the 'edit' template" do
-        response = Response.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Response.any_instance.stub(:save).and_return(false)
-        put :update, {:id => response.to_param, :response => {  }}, valid_session
-        response.should render_template("edit")
       end
     end
   end
