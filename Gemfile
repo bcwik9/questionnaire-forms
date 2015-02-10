@@ -34,7 +34,8 @@ gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 # rspec
 gem 'minitest'
-gem 'rspec-rails'
+gem 'rspec-rails', '~> 2.14.0.rc1'
+gem 'database_cleaner'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development

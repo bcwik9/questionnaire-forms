@@ -1,16 +1,10 @@
 class QuestionnairesController < ApplicationController
-  before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
+  before_action :set_questionnaire, only: [:edit, :update, :destroy]
 
   # GET /questionnaires
   # GET /questionnaires.json
   def index
     @questionnaires = Questionnaire.all
-  end
-
-  # GET /questionnaires/1
-  # GET /questionnaires/1.json
-  def show
-    @questions = @questionnaire.questions
   end
 
   # GET /questionnaires/new
