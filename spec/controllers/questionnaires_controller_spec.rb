@@ -82,7 +82,6 @@ describe QuestionnairesController do
         # Trigger the behavior that occurs when invalid params are submitted
         Questionnaire.any_instance.stub(:save).and_return(false)
         post :create, {:questionnaire => {}}, valid_session
-
         assigns(:questionnaire).should be_a_new(Questionnaire)
       end
 
