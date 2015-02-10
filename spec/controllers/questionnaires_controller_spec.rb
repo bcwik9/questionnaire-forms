@@ -102,16 +102,6 @@ describe QuestionnairesController do
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested questionnaire" do
-        questionnaire = Questionnaire.create! valid_attributes
-        # Assuming there are no other questionnaires in the database, this
-        # specifies that the Questionnaire created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Questionnaire.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => questionnaire.to_param, :questionnaire => {'these' => 'params'}}, valid_session
-      end
-
       it "assigns the requested questionnaire as @questionnaire" do
         questionnaire = Questionnaire.create! valid_attributes
         put :update, {:id => questionnaire.to_param, :questionnaire => valid_attributes}, valid_session
