@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-        $('#responses').DataTable()
-        $('#user_response').DataTable()
+        $('#responses').DataTable responsive: true
+        $('#user_response').DataTable responsive: true
