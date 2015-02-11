@@ -10,9 +10,9 @@ class ResponsesController < ApplicationController
   # GET /responses/1
   # GET /responses/1.json
   def show
-    @answers = @response.answers
-    @questionnaire_name = @response.questionnaire.name
-    @user = @response.user
+    # @answers = @response.answers
+    # @questionnaire_name = @response.questionnaire.name
+    # @user = @response.user
   end
 
   # GET /responses/new
