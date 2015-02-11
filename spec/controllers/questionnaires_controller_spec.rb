@@ -24,7 +24,7 @@ describe QuestionnairesController do
   # Questionnaire. As you add validations to Questionnaire, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { name: "Questionnaire name" }
+    FactoryGirl.attributes_for(:questionnaire)
   end
 
   def invalid_attributes questionnaire=nil

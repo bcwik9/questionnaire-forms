@@ -24,7 +24,8 @@ describe ResponsesController do
   # Response. As you add validations to Response, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {:user => 'Anonymous'} 
+    response = FactoryGirl.attributes_for :response
+    return response
   }
 
   # This should return the minimal set of values that should be in the session
@@ -48,6 +49,7 @@ describe ResponsesController do
 
   describe "GET show" do
     it "assigns the requested response as @response" do
+      raise valid_attributes.to_s
       response = Response.create! valid_attributes
       get :show, {:id => response.to_param}, valid_session
       assigns(:response).should eq(response)
@@ -56,7 +58,8 @@ describe ResponsesController do
 
   describe "GET new" do
     it "assigns a new response as @response" do
-      get :new, {}, valid_session
+      questionnaire = FactoryGirl.create :questionnaire
+      get :new, {:id => questionnaire.id }, valid_session
       assigns(:response).should be_a_new(Response)
     end
   end
