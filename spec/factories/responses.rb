@@ -2,6 +2,6 @@
 FactoryGirl.define do
   factory :response do
     user Faker::Name.first_name
-    questionnaire
+    answers { create_list(:answer,1) }
   end
 end
