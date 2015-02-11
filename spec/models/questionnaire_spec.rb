@@ -10,13 +10,15 @@ describe Questionnaire do
     response_attrs = FactoryGirl.attributes_for :questionnaire
     return response_attrs
   }
+
   
   it "should have at least one question" do
-    pending 'add functionality!'
+    expect(response.questions.size).to be > 0
   end
 
   it "should have a name" do
-    pending 'add functionality!'
+    response.name.should be_true
+    #expect(response.name).to be ne nil
   end
 
 end
