@@ -3,11 +3,18 @@ Approach
 
 This was a fairly simple webapp to create and manage questionnaires. A user can create a new questionnaire, modify a questionnaire, fill out an existing questionnaire, and view responses. It's also mobile-friendly. Essentially there are just Questionnaires with Questions and Responses with Answers.
 
-Technology used:
+### Technology used:
+
 * Ruby on Rails
 * bootstrap
 * datatables
 * rspec with factory girl
+
+## Improvements
+
+I can definitely improve the tests some. This was really the first time I had written Rspec tests, and I learned a lot. I think next time I'll try to do more of a Test Driven Development (TDD) approach, as that would really help me to learn testing better and improve the quality of my code.
+
+
 
 Everplans Codetest
 =================
