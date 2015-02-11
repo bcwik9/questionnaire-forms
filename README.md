@@ -1,3 +1,14 @@
+Approach
+=================
+
+This was a fairly simple webapp to create and manage questionnaires. A user can create a new questionnaire, modify a questionnaire, fill out an existing questionnaire, and view responses. It's also mobile-friendly. Essentially there are just Questionnaires with Questions and Responses with Answers.
+
+Technology used:
+* Ruby on Rails
+* bootstrap
+* datatables
+* rspec with factory girl
+
 Everplans Codetest
 =================
 
