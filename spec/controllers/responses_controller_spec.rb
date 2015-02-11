@@ -50,7 +50,6 @@ describe ResponsesController do
   describe "GET show" do
     it "assigns the requested response as @response" do
       response = Response.create! valid_attributes
-      puts response.to_yaml
       get :show, {:id => response.to_param}, valid_session
       assigns(:response).should eq(response)
     end

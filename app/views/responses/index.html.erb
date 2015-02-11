@@ -14,7 +14,7 @@
     <tbody>
 	<% @responses.each do |response| %>
 	    <tr>
-		<td><%= link_to response.questionnaire.name, response, class: "btn btn-default tbl-btn" %></td>
+		<td><%= link_to (response.questionnaire.try(:name) || "No Questionnaire"), response, class: "btn btn-default tbl-btn" %></td>
 		<td><%= response.user %></td>
 		<td><%= response.created_at %></td>
 		<td><%= link_to '', response, class: "btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: 'Are you sure?' } %></td>
