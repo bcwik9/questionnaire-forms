@@ -11,6 +11,10 @@ describe Questionnaire do
     return response_attrs
   }
 
+  it "should have a valid factory" do
+    response.should be_valid
+  end
+
   
   it "should have at least one question" do
     expect(response.questions.size).to be > 0
