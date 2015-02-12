@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :answer do
     content "Answer content"
     response
+    question
   end
 end
