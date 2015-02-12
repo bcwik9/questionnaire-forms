@@ -8,12 +8,13 @@ This was a fairly simple webapp to create and manage questionnaires. A user can 
 * Ruby on Rails
 * bootstrap
 * datatables
-* rspec with factory girl
+* rspec with factory girl for testing
+* google analytics
 
-## Improvements
+### Improvements
 
-I can definitely improve the tests some. This was really the first time I had written Rspec tests, and I learned a lot. I think next time I'll try to do more of a Test Driven Development (TDD) approach, as that would really help me to learn testing better and improve the quality of my code.
-
+* I can definitely improve the tests some. This was really the first time I had written Rspec tests, and I learned a lot. I think next time I'll try to do more of a Test Driven Development (TDD) approach, as that would really help me to learn testing better and improve the quality of my code.
+* Add functionality to grade surverys (determine if answer is correct)
 
 
 Everplans Codetest
