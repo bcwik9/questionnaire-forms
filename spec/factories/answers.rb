@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :answer do
     content "Answer content"
+    response
   end
 end
