@@ -13,7 +13,7 @@ This was a fairly simple webapp to create and manage questionnaires. A user can 
 
 ### Improvements
 
-* Rspec tests are failing after I pulled this down on my other dev box... I believe my factory girl model dependencies are messed up and need fixed..
+* Rspec tests are failing after I pulled this down on my other dev box... I believe my factory girl model dependencies are messed up and need fixed... running rake db:reset appears to fix the issue for the time being
 * I can definitely improve the tests some. This was really the first time I had written Rspec tests, and I learned a lot. I think next time I'll try to do more of a Test Driven Development (TDD) approach, as that would really help me to learn testing better and improve the quality of my code.
 * Add functionality to grade surverys (determine if answer is correct)
 
