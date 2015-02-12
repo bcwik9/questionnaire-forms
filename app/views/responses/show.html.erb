@@ -1,7 +1,7 @@
 <h1>Questionnaire: <%= @response.questionnaire ? @response.questionnaire.name : "No Questionaire" %></h1>
 
 <% if @response.questionnaire %>
-  <h2>Completed by: <%= @response.user %></h2>
+  <h3>Completed by: <%= @response.user %></h3>
   
   <table id="user_response" class="table table-striped" >
       <thead>
