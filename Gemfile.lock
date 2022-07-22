@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/rweng/jquery-datatables-rails.git
-  revision: db17aa0145164095b2b21f83f1ef7ccf91b9ea54
-  specs:
-    jquery-datatables-rails (3.1.1)
-      actionpack (>= 3.1)
-      jquery-rails
-      railties (>= 3.1)
-      sass-rails
-
-GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 62854e5129e1a5a24589b3a3849235ca4b794e6f
   specs:
@@ -18,6 +8,16 @@ GIT
       less-rails (>= 2.5.0)
       rails (>= 3.1)
       railties (>= 3.1)
+
+GIT
+  remote: https://github.com/rweng/jquery-datatables-rails.git
+  revision: d486b31b192a2924b1913e080ad23460e6b96d31
+  specs:
+    jquery-datatables-rails (3.4.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
 
 GEM
   remote: https://rubygems.org/
@@ -148,11 +148,11 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.6)
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
-    tzinfo (1.2.2)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
